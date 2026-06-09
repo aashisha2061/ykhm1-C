@@ -1,0 +1,16 @@
+# ykhm1-C
+
+# MEMBER
+リーダー：PARK JUNEHYEONG(パク　ジュンヒョン)
+メンバー：KUMAL AASHISHA (くマル　アシシャ）Yu (ユ) ,CHEN ZHENMIN(チンシンミン)
+
+# チームの共通点; (青🟦) ,(🍊みかん)
+
+
+# パクの好きな曜日：月、火
+# ユの好きな曜日:日曜日
+# 陳の好きな曜日：土曜日
+# アシシャの好きな曜日:土曜日
+
+
+# パクの好きな曜日：harry potter series
