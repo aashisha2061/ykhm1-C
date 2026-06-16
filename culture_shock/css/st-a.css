@@ -1,0 +1,16 @@
+/* ===== st-a 担当CSS ===== */
+/* st-a の人は、このファイルだけ編集します */
+
+#st-a {
+  border-left: 8px solid orange;
+}
+
+#st-a h2 {
+  color: #d46a00;
+}
+
+#st-a .country {
+  background: #fff3e0;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
