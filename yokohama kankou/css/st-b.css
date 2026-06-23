@@ -1,0 +1,16 @@
+/* ===== st-b 担当CSS ===== */
+/* st-b の人は、このファイルだけ編集します */
+
+#st-b {
+  border-left: 8px solid skyblue;
+}
+
+#st-b h2 {
+  color: #0077aa;
+}
+
+#st-b .country {
+  background: #e0f4ff;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
