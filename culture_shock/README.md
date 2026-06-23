@@ -11,7 +11,7 @@
 > 日本に来てびっくりしたこと / Culture Shock in Japan
 
 ## ファイルのつくり
-
+   
 ```txt
 culture-shock-page/
 ├── index.html
