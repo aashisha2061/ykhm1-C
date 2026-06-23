@@ -2,15 +2,16 @@
 /* st-a の人は、このファイルだけ編集します */
 
 #st-a {
-  border-left: 8px solid orange;
+  border-left: 8px solid skyblue;
 }
 
 #st-a h2 {
-  color: #d46a00;
+  color:blueviolet;
 }
 
 #st-a .country {
-  background: #fff3e0;
+  background: skyblue;
   padding: 8px 12px;
   border-radius: 8px;
 }
+
