@@ -1,0 +1,13 @@
+/* member4 ― Spot 04 */
+.member4 { --spot-color: var(--ink-soft); }
+
+.member4::after {
+  content: "Spot 04";
+  position: absolute;
+  top: 18px; right: clamp(24px, 3.5vw, 36px);
+  font-family: var(--font-body);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  color: var(--ink-soft);
+  opacity: .65;
+}

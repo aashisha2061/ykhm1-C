@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中日文化差异｜哆啦A梦主题对照表</title>
+    <style>
+        /* 全局重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 整体页面浅蓝色底色+铜锣烧暗纹 */
+        body {
+            font-family: "Noto Serif JP", "STXingkai", serif;
+            background: #e6f4ff;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg width='70' height='70' viewBox='0 0 70 70' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='35' cy='35' r='18' fill='%23ffd39b' opacity='0.2'/%3E%3Ccircle cx='35' cy='35' r='10' fill='%23ffb766' opacity='0.15'/%3E%3C/svg%3E");
+            min-height: 100vh;
+            padding: 40px 15px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 金色铃铛飘落动画 */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(10px 10px at 12% 20%, #ffd700, transparent),
+                radial-gradient(7px 7px at 32% 45%, #ffcc00, transparent),
+                radial-gradient(12px 12px at 55% 25%, #ffdd00, transparent),
+                radial-gradient(8px 8px at 72% 65%, #ffd100, transparent),
+                radial-gradient(9px 9px at 93% 35%, #ffc900, transparent);
+            background-repeat: repeat;
+            background-size: 150px 150px;
+            animation: bellFall 14s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes bellFall {
+            0% { transform: translateY(-120px) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* 头部横幅：纯哆啦A梦天蓝背景，匹配示例图 */
+        .header-box {
+            background: #0099ff;
+            border-radius: 24px;
+            padding: 45px 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 145, 255, 0.3);
+            border: 4px solid #ffffff;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 中间哆啦A梦插图，居中覆盖 */
+        .doraemon-header-img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            height: 120%;
+            opacity: 0.65;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-box h1 {
+            font-family: "STXingkai", "Noto Serif JP", serif;
+            font-size: 42px;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+            letter-spacing: 5px;
+            margin-bottom: 16px;
+        }
+
+        .header-box p {
+            font-size: 20px;
+            color: #ffffff;
+            letter-spacing: 3px;
+        }
+
+        /* 分类卡片 哆啦A梦蓝色主题 */
+        .cate-card {
+            background: #ffffffee;
+            border-radius: 22px;
+            padding: 28px 32px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 20px rgba(0, 145, 255, 0.15);
+            border-left: 8px solid #0091ff;
+            border: 1px solid #0091ff33;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .cate-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 14px 35px rgba(0, 153, 255, 0.25);
+        }
+
+        .cate-card::before {
+            content: "🐱";
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 36px;
+            opacity: 0.12;
+        }
+
+        .cate-title {
+            font-family: "STXingkai", serif;
+            font-size: 24px;
+            color: #0059b3;
+            margin-bottom: 22px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .cate-title span {
+            display: inline-block;
+            width: 5px;
+            height: 26px;
+            background: linear-gradient(#0091ff, #ffffff);
+            border-radius: 3px;
+        }
+
+        /* 条目区块 浅蓝渐变 */
+        .item-block {
+            background: linear-gradient(90deg, #e6f2ff, #f0f8ff);
+            border-radius: 14px;
+            padding: 14px 18px;
+            margin: 12px 0;
+            border: 1px solid #0091ff22;
+            transition: 0.3s;
+        }
+
+        .item-block:hover {
+            background: #d0e8ff;
+            padding-left: 24px;
+        }
+
+        /* 日文字体 深蓝 */
+        .jp-line {
+            font-family: "Noto Serif JP", serif;
+            font-size: 18px;
+            color: #0059b3;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        /* 中文文字 */
+        .cn-line {
+            font-size: 15px;
+            color: #333333;
+            display: block;
+            padding-left: 4px;
+        }
+
+        /* 底部落款 */
+        .footer-sign {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px dashed #0091ff60;
+            font-size: 18px;
+            color: #0059b3;
+            font-family: "STXingkai";
+            letter-spacing: 3px;
+        }
+
+        /* 移动端适配 */
+        @media (max-width:768px) {
+            .header-box h1 {
+                font-size: 28px;
+            }
+            .header-box {
+                padding: 30px 15px;
+            }
+            .doraemon-header-img {
+                height: 100%;
+            }
+            .cate-card {
+                padding: 20px;
+            }
+            .jp-line {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-box">
+            <!-- 哆啦A梦背景插图 -->
+            <img class="doraemon-header-img" src="https://images.unsplash.com/photo-1633613286991-611fe299c4be?q=80&w=1000&auto=format&fit=crop" alt="哆啦A梦">
+            <div class="header-content">
+                <h1>🐱 JP 日本とCN中国の文化差異 🎒</h1>
+                <!-- 只保留汉字副标题，删除ドラえもんテーマ -->
+                <p>中日生活習慣対照一覧</p>
+            </div>
+        </div>
+
+        <!-- 一、生活習慣 -->
+        <div class="cate-card">
+            <h2 class="cate-title"><span></span>🏠 一、生活習慣｜生活习惯</h2>
+            <div class="item-block">
+                <span class="jp-line">ゴミ分別が厳しい</span>
+                <span class="cn-line">垃圾分类很严格</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">公共の場で大声で話さない</span>
+                <span class="cn-line">公共场所不大声喧哗</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">電車・バスの中で電話をしない</span>
+                <span class="cn-line">电车、公交车内不打电话</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">玄関で靴を脱ぐ</span>
+                <span class="cn-line">进门脱鞋</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">水道水が直接飲める</span>
+                <span class="cn-line">自来水可以直饮</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">レジで袋は有料</span>
+                <span class="cn-line">购物塑料袋收费</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">並ぶのが普通、割り込みは失礼</span>
+                <span class="cn-line">排队是常态，插队很失礼</span>
+            </div>
+        </div>
+
+        <!-- 二、食文化 -->
+        <div class="cate-card">
+            <h2 class="cate-title"><span></span>🥞 二、食文化｜饮食文化</h2>
+            <div class="item-block">
+                <span class="jp-line">食事の前に「いただきます」、後に「ごちそうさま」と言う</span>
+                <span class="cn-line">饭前说我开动了，饭后说多谢款待</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">箸でご飯を突き立てない</span>
+                <span class="cn-line">不要把筷子插在米饭上</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">外食でお皿を持って食べる</span>
+                <span class="cn-line">外出吃饭端碗进食</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">生もの（刺身、生卵）をよく食べる</span>
+                <span class="cn-line">常吃生食（刺身、生鸡蛋）</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">少人数向けの一人前メニューが多い</span>
+                <span class="cn-line">单人份菜品很多</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">店内で食べ残しを持ち帰りにくい</span>
+                <span class="cn-line">餐厅食物很难打包带走</span>
+            </div>
+        </div>
+
+        <!-- 三、交通・公共マナー -->
+        <div class="cate-card">
+            <h2 class="cate-title"><span></span>🚃 三、交通・公共マナー｜交通礼仪</h2>
+            <div class="item-block">
+                <span class="jp-line">車は左側通行</span>
+                <span class="cn-line">车辆靠左行驶</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">歩道も基本左側を歩く</span>
+                <span class="cn-line">人行道基本靠左走</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">電車の時間が非常に正確</span>
+                <span class="cn-line">电车时间非常准点</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">道にゴミ箱が少ない</span>
+                <span class="cn-line">路边垃圾桶很少</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">自転車に乗る時夜はライトをつける</span>
+                <span class="cn-line">夜间骑车必须开灯</span>
+            </div>
+        </div>
+
+        <!-- 四、礼儀・人間関係 -->
+        <div class="cate-card">
+            <h2 class="cate-title"><span></span>🙇 四、礼儀・人間関係｜礼仪与人情</h2>
+            <div class="item-block">
+                <span class="jp-line">お辞儀で挨拶する、握手は少ない</span>
+                <span class="cn-line">鞠躬打招呼，很少握手</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">敬語を細かく使い分ける</span>
+                <span class="cn-line">敬语区分使用细致</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">他人の家に訪ねる時手土産を持っていく</span>
+                <span class="cn-line">拜访别人家要带伴手礼</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">遠回しに断る、直接否定しにくい</span>
+                <span class="cn-line">委婉拒绝，不直接否定他人</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">プライベートな質問をあまりしない</span>
+                <span class="cn-line">不随便打听私人问题（收入、年龄等）</span>
+            </div>
+        </div>
+
+        <!-- 五、住まい・施設 -->
+        <div class="cate-card">
+            <h2 class="cate-title"><span></span>🛁 五、住まい・施設｜住宅设施</h2>
+            <div class="item-block">
+                <span class="jp-line">バスルームとトイレが別々</span>
+                <span class="cn-line">浴室和厕所分开</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">浴室に洗い場があり、湯船に汚れを持ち込まない</span>
+                <span class="cn-line">浴室有洗漱区，不能带着脏污进浴缸</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">賃貸の敷金・礼金が高い</span>
+                <span class="cn-line">租房押金、礼金很贵</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">集合住宅は騒音に厳しい</span>
+                <span class="cn-line">公寓对噪音管控严格</span>
+            </div>
+        </div>
+
+        <!-- 六、お金・買い物 -->
+        <div class="cate-card">
+            <h2 class="cate-title"><span></span>💰 六、お金・買い物｜金钱消费</h2>
+            <div class="item-block">
+                <span class="jp-line">現金をまだよく使う</span>
+                <span class="cn-line">依然经常使用现金</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">消費税が商品価格にかかる</span>
+                <span class="cn-line">商品需要额外支付消费税</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">値切りをほとんどしない</span>
+                <span class="cn-line">几乎不砍价</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">レシートを必ず渡してくれる</span>
+                <span class="cn-line">一定会提供小票</span>
+            </div>
+        </div>
+
+        <!-- 七、教育・仕事 -->
+        <div class="cate-card">
+            <h2 class="cate-title"><span></span>🏫 七、教育・仕事｜教育工作</h2>
+            <div class="item-block">
+                <span class="jp-line">会社で残業が一般的</span>
+                <span class="cn-line">公司加班比较普遍</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">定時に退社する文化が弱い</span>
+                <span class="cn-line">准时下班的氛围淡薄</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">学校の掃除は生徒が自分で行う</span>
+                <span class="cn-line">校园卫生由学生自行打扫</span>
+            </div>
+            <div class="item-block">
+                <span class="jp-line">集団行動を重視する</span>
+                <span class="cn-line">重视集体行动</span>
+            </div>
+        </div>
+
+        <!-- 底部作者落款 -->
+        <div class="footer-sign">
+            🐱 ページ作成：chenzhenmin 🔔
+        </div>
+    </div>
+</body>
+</html>

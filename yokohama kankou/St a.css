@@ -1,0 +1,13 @@
+/* member1 ― Spot 01 */
+.member1 { --spot-color: var(--brick); }
+
+.member1::after {
+  content: "Spot 01";
+  position: absolute;
+  top: 18px; right: clamp(24px, 3.5vw, 36px);
+  font-family: var(--font-body);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  color: var(--brick);
+  opacity: .65;
+}
