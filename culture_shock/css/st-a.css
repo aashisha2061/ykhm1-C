@@ -1,0 +1,17 @@
+/* ===== st-a 担当CSS ===== */
+/* st-a の人は、このファイルだけ編集します */
+
+#st-a {
+  border-left: 8px solid skyblue;
+}
+
+#st-a h2 {
+  color:blueviolet;
+}
+
+#st-a .country {
+  background: skyblue;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
