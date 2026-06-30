@@ -32,7 +32,7 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--paper) url(../images/page-bg.jpg) center / cover fixed;
   color: var(--ink);
   font-family: var(--font-body);
   line-height: 1.9;
@@ -45,9 +45,11 @@ body {
 
 .site-header {
   position: relative;
-  background: var(--navy);
+  background: linear-gradient(135deg, rgba(22,38,59,.92), rgba(162,62,46,.85)), url(../images/header-bg.jpg) center bottom / contain no-repeat;
+  background-attachment: fixed;
   color: var(--paper);
   padding: clamp(64px, 12vh, 120px) var(--gutter) clamp(56px, 9vh, 96px);
+  min-height: 450px;
   overflow: hidden;
   isolation: isolate;
 }
