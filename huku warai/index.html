@@ -36,31 +36,33 @@
 
         /* 各パーツの配置位置（ここを調整して福笑いを完成させる） */
         .face {
-            top: 40px;
+            top: 30px;
             left: 50px;
             width: 300px;
-            z-index: 1;
+            z-index: 3;
         }
 
         .ears {
-            top: 140px;
-            left: 100px;
-            width: 200px;
-            z-index: 2;
+            top: -10px;
+            left: 40px;
+            width: 320px;
+            z-index: 4;
         }
 
         .body {
             top: 200px;
-            left: 170px;
-            width: 60px;
-            z-index: 3;
+            left: 90px;
+            width: 220px;
+            z-index: 2;
         }
 
         .tail {
-            top: 270px;
-            left: 150px;
-            width: 100px;
-            z-index: 4;
+            top: 160px;
+            left: 280px;
+            width: 160px;
+            z-index: 1;
+            transform: rotate(20deg);
+            transform-origin: center;
         }
     </style>
 </head>
@@ -71,9 +73,9 @@
     <p>各自が作成したSVGパーツを組み合わせて、一つの顔を作っています！</p>
 
     <div class="fukuwarai-canvas">
-        <img src="face.svg" alt="輪郭" class="part face">
-        <img src="ears.svg" alt="目" class="part ears">
-        <img src="body.svg" alt="鼻" class="part body">
+        <img src="頭.svg" alt="輪郭" class="part face">
+        <img src="耳.svg" alt="目" class="part ears">
+        <img src="体.svg" alt="鼻" class="part body">
         <img src="tail.svg" alt="口" class="part tail">
     </div>
 
