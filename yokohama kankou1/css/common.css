@@ -1,0 +1,280 @@
+/* ============================================================
+   横浜 港町案内 ― 共通デザインシステム
+   テーマ：開港の港、赤レンガ倉庫、真鍮の灯
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap');
+
+:root {
+  /* ---- カラートークン ---- */
+  --paper:      #F6F1E7;   /* 古地図のような生成り紙 */
+  --paper-deep: #EFE7D8;
+  --navy:       #16263B;   /* 港の夜 */
+  --navy-soft:  #233A56;
+  --brick:      #A23E2E;   /* 赤レンガ倉庫 */
+  --brass:      #B8902F;   /* 灯台の真鍮 */
+  --ink:        #20242B;
+  --ink-soft:   #4B5560;
+  --mist:       #D8E0DC;
+
+  /* ---- タイポグラフィ ---- */
+  --font-display: "Shippori Mincho", serif;
+  --font-body:    "Zen Kaku Gothic New", sans-serif;
+
+  /* ---- レイアウト ---- */
+  --gutter: clamp(20px, 5vw, 56px);
+  --radius: 2px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--paper) url(../images/page-bg.jpg) center / cover fixed;
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.9;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================================
+   ヘッダー：港の夜と灯台の灯り
+   ============================================================ */
+
+.site-header {
+  position: relative;
+  background: linear-gradient(135deg, rgba(22,38,59,.92), rgba(162,62,46,.85)), url(../images/header-bg.jpg) center bottom / contain no-repeat;
+  background-attachment: fixed;
+  color: var(--paper);
+  padding: clamp(64px, 12vh, 120px) var(--gutter) clamp(56px, 9vh, 96px);
+  min-height: 450px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* 波の地平線（シグネチャー要素の予告） */
+.site-header::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 64px;
+  background-image:
+    radial-gradient(circle at 10% 100%, transparent 18px, var(--navy-soft) 19px),
+    radial-gradient(circle at 30% 100%, transparent 18px, var(--navy-soft) 19px),
+    radial-gradient(circle at 50% 100%, transparent 18px, var(--navy-soft) 19px),
+    radial-gradient(circle at 70% 100%, transparent 18px, var(--navy-soft) 19px),
+    radial-gradient(circle at 90% 100%, transparent 18px, var(--navy-soft) 19px);
+  background-size: 20% 64px;
+  opacity: .55;
+  z-index: 0;
+}
+
+.site-header::after {
+  /* 灯台の光暈 */
+  content: "";
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(184,144,47,.35), transparent 70%);
+  z-index: 0;
+}
+
+.site-header h1,
+.site-header p {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.site-header h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  letter-spacing: .08em;
+  line-height: 1.4;
+}
+
+/* 内容が空の見出し・段落も、見た目が崩れないように */
+.site-header h1:empty::before {
+  content: "横浜 港町案内";
+}
+.site-header p:empty::before {
+  content: "開港の記憶を歩く、四つの港景色";
+  font-family: var(--font-body);
+  font-size: .95rem;
+  letter-spacing: .12em;
+  color: var(--brass);
+  display: block;
+  margin-top: 18px;
+}
+.site-header p:not(:empty) {
+  margin-top: 18px;
+  font-size: .95rem;
+  letter-spacing: .12em;
+  color: var(--brass);
+}
+
+/* ============================================================
+   メインコンテナ
+   ============================================================ */
+
+main {
+  display: block;
+  padding: clamp(48px, 8vh, 96px) var(--gutter) clamp(72px, 10vh, 128px);
+}
+
+.shock-card {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.shock-card > h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  color: var(--navy);
+  text-align: center;
+  letter-spacing: .06em;
+  margin: 0 0 12px;
+}
+
+.shock-card > h2:empty::before {
+  content: "港町に残る、四つの景色";
+}
+
+.shock-card > h2::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 2px;
+  background: var(--brick);
+  margin: 18px auto 56px;
+}
+
+/* ============================================================
+   メンバーカード共通スタイル（グリッド）
+   ============================================================ */
+
+.shock-card {
+  display: grid;
+}
+
+.shock-card > div[class^="member"] {
+  display: grid;
+}
+
+/* グリッド本体は h2 の下、4枚を 2x2 に */
+.shock-card > h2 { grid-column: 1 / -1; }
+
+.shock-card {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 40px);
+}
+
+@media (max-width: 760px) {
+  .shock-card { grid-template-columns: 1fr; }
+}
+
+div[class^="member"] {
+  position: relative;
+  background: #FFFDF8;
+  border: 1px solid var(--mist);
+  border-radius: var(--radius);
+  padding: clamp(28px, 4vw, 40px) clamp(24px, 3.5vw, 36px) clamp(32px, 4vw, 44px);
+  box-shadow: 0 1px 0 rgba(22,38,59,.04);
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+div[class^="member"]:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px -22px rgba(22,38,59,.35);
+}
+
+/* レンガを模した上辺の帯 */
+div[class^="member"]::before {
+  content: "";
+  position: absolute;
+  top: 0; left: clamp(24px, 3.5vw, 36px); right: clamp(24px, 3.5vw, 36px);
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--brick) 0 22px,
+    var(--brass) 22px 24px
+  );
+  opacity: .85;
+}
+
+div[class^="member"] h3,
+div[class^="member"] h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  color: var(--navy);
+  margin: 6px 0 0;
+  letter-spacing: .04em;
+}
+
+div[class^="member"] p {
+  margin: 16px 0 0;
+  color: var(--ink-soft);
+  font-size: .98rem;
+  line-height: 2;
+  white-space: pre-line;
+}
+
+/* 段落内の余分な空行・字下げを詰める */
+div[class^="member"] p {
+  text-indent: 0;
+}
+
+/* ============================================================
+   空のカード（member1 / member3）：準備中の演出
+   ============================================================ */
+
+div[class^="member"] h3:empty,
+div[class^="member"] h4:empty {
+  display: block;
+  height: 1.45rem;
+}
+
+div[class^="member"] h3:empty::before,
+div[class^="member"] h4:empty::before {
+  content: "次の港景色、ただいま準備中";
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: .95rem;
+  letter-spacing: .08em;
+  color: var(--ink-soft);
+  opacity: .55;
+}
+
+div[class^="member"] p:empty {
+  display: grid;
+  place-items: center;
+  min-height: 92px;
+  margin-top: 22px;
+  border: 1px dashed var(--mist);
+  border-radius: var(--radius);
+}
+
+div[class^="member"] p:empty::before {
+  content: "⚓";
+  font-size: 1.4rem;
+  color: var(--brass);
+  opacity: .6;
+}
+
+/* 内容が空のカードは少し静かに見せる */
+div[class^="member"]:has(h3:empty, h4:empty) {
+  background: var(--paper-deep);
+  border-style: dashed;
+}
+
+div[class^="member"]:has(h3:empty, h4:empty)::before {
+  opacity: .35;
+  filter: grayscale(1);
+}
